@@ -6,13 +6,13 @@
   box-sizing: border-box;
 }
 body {
-  width: 100vw;
   height: 100vh;
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #191c29;
+  color: white;
 }
 
 header {
@@ -24,12 +24,12 @@ header {
 }
 
 header img {
-  width: 150px;
+  width: 120px;
 }
 
 header h1 {
   position: absolute;
-  top: 20%;
+  top: 10%;
   left: 10%;
   color: #ecc654;
 }
@@ -43,7 +43,7 @@ header h1 {
   align-items: flex-end;
   padding: 0 36px;
   perspective: 2500px;
-  margin: 0 50px;
+  margin: 0 auto;
   background-color: #191c29;
 }
 
@@ -117,8 +117,8 @@ header h1 {
   color: white;
   position: absolute;
   bottom: 0;
-  right:25%;
-  left:25%;
+  right:30%;
+  left:30%;
 }
 
 .card:hover .title {
@@ -148,6 +148,20 @@ a {
 }
 
 h2 {
+  text-align: center;
+  color: white;
+}
+
+h3 {
   color: white;
   text-align: center;
+  margin: 0;
+}
+
+.grayscale {
+  filter: grayscale(1);
+}
+
+.resultsTitle {
+  margin: 35px 0;
 }

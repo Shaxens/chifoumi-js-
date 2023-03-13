@@ -17,7 +17,16 @@
     </nav>
   </header>
 
-  <div class="container" style="margin-top: 120px;">
+  <div class="container" style="padding-top: 120px;">
+
+    <div class="row">
+      <div class="col text-center">
+        <h2>Scores : </h2>
+        <p>Joueur : <span id="playerScore"></span> </p>
+        <p>Ordinateur : <span id="computerScore"></span></p>
+      </div>
+    </div>
+
 
       <div class="row">
         <div class="col">
@@ -26,7 +35,7 @@
                 <img src="./img/RockElemental.png" class="cover-image" />
               </div>
               <img src="./img/RockElementalHover.png" class="character" style="border-radius: 5%;"/>
-              <h2 class="title" id="rock">Pierre</h2>
+              <h4 class="title" id="rock">Pierre</h4>
             </div>
         </div>
         <div class="col">
@@ -36,7 +45,7 @@
               </div>
               <img src="./img/SpawnpoolHover.png" class="character" style="border-radius: 5%;"/>
               <div class="upTitle">
-                <h2 class="title" id="sheet">Feuille</h2>
+                <h4 class="title" id="sheet">Feuille</h4>
               </div>
             </div>
         </div>
@@ -46,29 +55,32 @@
                 <img src="./img/MeatGrinder.png" class="cover-image" />
               </div>
               <img src="./img/MeatGrinderHover.png" class="character" style="border-radius: 5%;"/>
-              <h2 class="title" id="cisor">Ciseaux</h2>
+              <h4 class="title" id="cisor">Ciseaux</h4>
             </div>
         </div>
       </div>
 
 
-      <h1 style="text-align: center;color: white;margin: 50px 0;">Résultats :</h1>
+      <h2 class="resultsTitle">Résultats :</h2>
       
-      <h2 id="result"></h2>
+      <h3 id="result">Jouez</h3>
+      <br>
 
         <div class="row">
           <div class="col"></div>
           <div class="col" >
-            <div class="card">
+            <div class="card grayscale">
               <div class="wrapper">
                 <img src="./img/MeatGrinder.png" class="cover-image" id="user-result"/>
               </div>
               <img src="./img/MeatGrinderHover.png" class="character" style="border-radius: 5%;" id="user-result-hover"/>
             </div>
           </div>
-          <div class="col"></div>
+          <div class="col text-center displayNone">
+            <img src="./img/versus.png" alt="" style="width: 50%;margin: 25% 0;">
+          </div>
           <div class="col" >
-            <div class="card">
+            <div class="card grayscale">
               <div class="wrapper">
                 <img src="./img/MeatGrinder.png" class="cover-image" id="computer-result"/>
               </div>

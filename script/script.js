@@ -1,4 +1,5 @@
-
+let user_count = 0;
+let computer_count = 0;
   
   function getUserChoice(choice) {
     let userChoice = choice.innerHTML;
@@ -24,51 +25,58 @@
     console.log(result)
     if (result[0] === "Pierre" && result[1] === "Ciseaux") {
       document.querySelector("#result").innerHTML =  userWin;
+      user_count++;
     } else if (result[0] === "Pierre" && result[1] === "Feuille") {
       document.querySelector("#result").innerHTML =  computerWin;
+      computer_count++;
     } else if (result[0] === "Feuille" && result[1] === "Ciseaux") {
       document.querySelector("#result").innerHTML =  computerWin;
+      computer_count++;
     } else if (result[0] === "Feuille" && result[1] === "Pierre") {
       document.querySelector("#result").innerHTML =  userWin;
+      user_count++;
     } else if (result[0] === "Ciseaux" && result[1] === "Feuille") {
       document.querySelector("#result").innerHTML =  userWin;
+      user_count++;
     } else if (result[0] === "Ciseaux" && result[1] === "Pierre") {
       document.querySelector("#result").innerHTML =  computerWin;
+      computer_count++;
     } else {
       document.querySelector("#result").innerHTML =  equality;
     }
 
-    showUserChoice(result[0]);
-    showComputerChoice(result[1]);
+    if (document.querySelectorAll(".grayscale")) {
+      const elements = document.querySelectorAll(".grayscale");
+      elements.forEach(elt => {
+        elt.classList.remove('grayscale');
+      });
+      
+    }
+
+
+    showChoices(result[0], "user")
+    showChoices(result[1], "computer")
+    scoreboard(user_count ,computer_count);
   }
 
-
-  function showComputerChoice(result) {
+  function showChoices(result, resultId) {
 
     if (result === "Ciseaux") {
-      document.querySelector('#computer-result').src = "./img/MeatGrinder.png";
-      document.querySelector('#computer-result-hover').src = "./img/MeatGrinderHover.png";
+      document.querySelector('#'+ resultId + '-result').src = "./img/MeatGrinder.png";
+      document.querySelector('#' + resultId + '-result-hover').src = "./img/MeatGrinderHover.png";
     } else if (result === "Pierre") {
-      document.querySelector('#computer-result').src = "./img/RockElemental.png";
-      document.querySelector('#computer-result-hover').src = "./img/RockElementalHover.png";
+      document.querySelector('#'+ resultId + '-result').src = "./img/RockElemental.png";
+      document.querySelector('#' + resultId + '-result-hover').src = "./img/RockElementalHover.png";
     } else if (result === "Feuille"){
-      document.querySelector('#computer-result').src = "./img/Spawnpool.png";
-      document.querySelector('#computer-result-hover').src = "./img/SpawnpoolHover.png";
+      document.querySelector('#'+ resultId + '-result').src = "./img/Spawnpool.png";
+      document.querySelector('#' + resultId + '-result-hover').src = "./img/SpawnpoolHover.png";
     }
 
   }
 
-  function showUserChoice(result) {
 
-    if (result === "Ciseaux") {
-      document.querySelector('#user-result').src = "./img/MeatGrinder.png";
-      document.querySelector('#user-result-hover').src = "./img/MeatGrinderHover.png";
-    } else if (result === "Pierre") {
-      document.querySelector('#user-result').src = "./img/RockElemental.png";
-      document.querySelector('#user-result-hover').src = "./img/RockElementalHover.png";
-    } else if (result === "Feuille"){
-      document.querySelector('#user-result').src = "./img/Spawnpool.png";
-      document.querySelector('#user-result-hover').src = "./img/SpawnpoolHover.png";
-    }
+  function scoreboard(user_count, computer_count) {
 
+    document.querySelector('#playerScore').innerHTML = user_count;
+    document.querySelector('#computerScore').innerHTML = computer_count;
   }
